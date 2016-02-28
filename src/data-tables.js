@@ -34,6 +34,14 @@ export default class DataTable extends React.Component
     });
   }
 
+  componentDidUpdate() {
+    const table = this.refs.table;
+    const dt = $(table).dataTable().api();
+    dt.clear();
+    dt.rows.add(this.props.data);
+    dt.draw();
+  }
+
   render() {
     return (
       <table

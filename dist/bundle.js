@@ -117,6 +117,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    }
 	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      var table = this.refs.table;
+	      var dt = (0, _jquery2.default)(table).dataTable().api();
+	      dt.clear();
+	      dt.rows.add(this.props.data);
+	      dt.draw();
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement('table', {

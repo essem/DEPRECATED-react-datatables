@@ -16,17 +16,17 @@ module.exports = {
         test: /\.css$/,
         loader: 'style!css',
       }, {
-        test: /\.woff2?$/,
-        loader: 'null',
+        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&minetype=application/font-woff',
       }, {
-        test: /\.ttf$/,
-        loader: 'null',
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&minetype=application/octet-stream',
       }, {
-        test: /\.eot$/,
-        loader: 'null',
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file',
       }, {
-        test: /\.svg$/,
-        loader: 'null',
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&minetype=image/svg+xml',
       },
     ],
   },

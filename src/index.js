@@ -50,6 +50,15 @@ export default class App extends React.Component {
     this.state = { test: 'foo', dataSet };
   }
 
+  handleInsert = () => {
+    this.setState({
+      dataSet: [
+        ['11', '22', '33', '44', '55', '66'],
+        ...this.state.dataSet,
+      ],
+    });
+  };
+
   render() {
     return (
       <div
@@ -67,6 +76,11 @@ export default class App extends React.Component {
           ]}
           onRowClick={data => console.log(data)}
         />
+        <button
+          onClick={this.handleInsert}
+        >
+          Insert a row
+        </button>
       </div>
     );
   }
